@@ -30,6 +30,7 @@ export const defaultOptions = {
   constrainDimensions: false,
   xAxis: true,
   yAxis: true,
+  scale: 1,
   cursorOffsetX: null,
   cursorOffsetY: null,
 };
@@ -446,13 +447,14 @@ function positionMirror({withFrame = false, initial = false} = {}) {
         if (mirrorOffset) {
           const x = sensorEvent.clientX - mirrorOffset.left - scrollOffset.x;
           const y = sensorEvent.clientY - mirrorOffset.top - scrollOffset.y;
+          const scale = options.scale;
 
           if ((options.xAxis && options.yAxis) || initial) {
-            mirror.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            mirror.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
           } else if (options.xAxis && !options.yAxis) {
-            mirror.style.transform = `translate3d(${x}px, ${initialY}px, 0)`;
+            mirror.style.transform = `translate3d(${x}px, ${initialY}px, 0) scale(${scale})`;
           } else if (options.yAxis && !options.xAxis) {
-            mirror.style.transform = `translate3d(${initialX}px, ${y}px, 0)`;
+            mirror.style.transform = `translate3d(${initialX}px, ${y}px, 0) scale(${scale})`;
           }
 
           if (initial) {

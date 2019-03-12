@@ -245,7 +245,7 @@ describe('Mirror', () => {
 
     const mirrorElement = document.querySelector('.draggable-mirror');
 
-    expect(mirrorElement.style.transform).toBe('translate3d(0px, 0px, 0)');
+    expect(mirrorElement.style.transform).toBe('translate3d(0px, 0px, 0) scale(1)');
 
     moveMouse(document.body, {
       clientX: 100,
@@ -255,7 +255,7 @@ describe('Mirror', () => {
     await waitForPromisesToResolve();
     waitForRequestAnimationFrame();
 
-    expect(mirrorElement.style.transform).toBe('translate3d(100px, 100px, 0)');
+    expect(mirrorElement.style.transform).toBe('translate3d(100px, 100px, 0) scale(1)');
 
     moveMouse(document.body, {
       clientX: 23,
@@ -265,7 +265,7 @@ describe('Mirror', () => {
     await waitForPromisesToResolve();
     waitForRequestAnimationFrame();
 
-    expect(mirrorElement.style.transform).toBe('translate3d(23px, 172px, 0)');
+    expect(mirrorElement.style.transform).toBe('translate3d(23px, 172px, 0) scale(1)');
 
     releaseMouse(draggable.source);
   });
@@ -286,7 +286,7 @@ describe('Mirror', () => {
     const mirrorElement = document.querySelector('.draggable-mirror');
     const originalTransform = mirrorElement.style.transform;
 
-    expect(originalTransform).toBe('translate3d(0px, 0px, 0)');
+    expect(originalTransform).toBe('translate3d(0px, 0px, 0) scale(1)');
 
     moveMouse(document.body, {
       clientX: 100,
