@@ -201,6 +201,7 @@ declare module '@shopify/draggable' {
     export interface MirrorOptions {
         xAxis?: boolean;
         yAxis?: boolean;
+        scale?: number;
         constrainDimensions?: boolean;
         cursorOffsetX?: number;
         cursorOffsetY?: number;
