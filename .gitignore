@@ -17,7 +17,7 @@ example.html
 
 coverage/
 docs/
-coverage/
+lib/
 
 # 'cause we are all yarny and stuff
 package-lock.json
