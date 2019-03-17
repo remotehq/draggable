@@ -1,16 +1,16 @@
-declare module '@shopify/draggable/lib/draggable.bundle.legacy' {
-    export * from '@shopify/draggable';
+declare module '@remotehq/draggable/lib/draggable.bundle.legacy' {
+    export * from '@remotehq/draggable';
 }
 
-declare module '@shopify/draggable/lib/es5/draggable.bundle' {
-    export * from '@shopify/draggable';
+declare module '@remotehq/draggable/lib/es5/draggable.bundle' {
+    export * from '@remotehq/draggable';
 }
 
-declare module '@shopify/draggable/lib/es5/draggable.bundle.legacy' {
-    export * from '@shopify/draggable';
+declare module '@remotehq/draggable/lib/es5/draggable.bundle.legacy' {
+    export * from '@remotehq/draggable';
 }
 
-declare module '@shopify/draggable' {
+declare module '@remotehq/draggable' {
     abstract class AbstractEvent<DataT = { [key: string]: any }> {
         constructor(data: DataT);
         static readonly type: string; // Abstract, waiting on https://github.com/Microsoft/TypeScript/issues/14600
